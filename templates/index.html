@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web App</title>
+    <style>
+        body {
+            background-color: #020202;
+            background-size: cover;
+            color: rgb(243, 238, 238);
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+        }
+        input[type=text] {
+            width: 300px;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to Yifei's web app</h1>
+    <form method="POST" action="/submit">
+        <label for="new_input_field">Do you want to fetch the newest data from the website? yes or no</label>
+        <input type="radio" id="yes" name="new_input_field" value="yes"><label for="yes" style="display: inline;">Yes</label>
+        <input type="radio" id="no" name="new_input_field" value="no" checked><label for="no" style="display: inline;">No</label>
+
+        <label for="summoner_name_field">plz input the name of summoner you want to check(case sensitive): </label>
+        <input type="text" id="summoner_name_field" name="summoner_name_field">
+
+        <label for="root_name_field">plz input the name of the root champion(no space): </label>
+        <input type="text" id="root_name_field" name="root_name_field">
+
+        <label for="find_name_field">plz input the name of the champion that you want to find(no space): </label>
+        <input type="text" id="find_name_field" name="find_name_field">
+
+        <label for="display_max_field">Do you want to see the champions with highest mastery?</label>
+        <input type="radio" id="yes" name="display_max_field" value="yes"><label for="yes" style="display: inline;">Yes</label>
+        <input type="radio" id="no" name="display_max_field" value="no" checked><label for="no" style="display: inline;">No</label>
+
+        <label for="display_min_field">Do you want to see the champions with lowest mastery?</label>
+        <input type="radio" id="yes" name="display_min_field" value="yes"><label for="yes" style="display: inline;">Yes</label>
+        <input type="radio" id="no" name="display_min_field" value="no" checked><label for="no" style="display: inline;">No</label>
+
+        <label for="display_image">Do you want to display mastery image?</label>
+        <input type="radio" id="yes" name="display_image" value="yes"><label for="yes" style="display: inline;">Yes</label>
+        <input type="radio" id="no" name="display_image" value="no" checked><label for="no" style="display: inline;">No</label>
+
+        <button type="submit">Submit</button>
+        <div id="image-container">
+            <img src="/static/EMO_LOL_02.jpg">
+        </div>
+        
+    </form>
+</body>
+</html>

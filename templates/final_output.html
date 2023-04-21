@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Champion Mastery</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		h1 {
+			color: #4CAF50;
+		}
+		p {
+			font-size: 20px;
+			color: #333;
+			margin: 10px;
+		}
+		img {
+			max-width: 400px;
+			margin-top: 30px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+	<h1>Champion Mastery</h1>
+	{% if error_message %}
+		<div class="error-message">{{ error_message }}</div>
+	{% else %}
+		<p><strong>{{ num_smaller }}</strong> champions have lower mastery points than root champion</p>
+		<p><strong>{{ num_larger }}</strong> champions have larger mastery points than root champion</p>
+		<p><p>
+		{% if max_message %}
+			<p>The champion with the max mastery is <strong>{{ max_name }}</strong>, with mastery level <strong>{{ max_level }}</strong> and mastery points <strong>{{ max_points }}</strong></p>
+			{% if display_image %}
+				<img src="{{ max_image_path }}" alt="Mastery image">
+			{% endif %}
+		{% endif %}
+		{% if min_message %}
+			<p>The champion with the min mastery is <strong>{{ min_name }}</strong>, with mastery level <strong>{{ min_level }}</strong> and mastery points <strong>{{ min_points }}</strong></p>
+			{% if display_image %}
+				<img src="{{ min_image_path }}" alt="Mastery image">
+			{% endif %}
+		{% endif %}
+
+		<p>The found champion has mastery level <strong>{{ find_level }}</strong> and mastery points <strong>{{ find_points }}</strong></p>
+		{% if display_image %}
+			<img src="{{ find_image_path }}" alt="Mastery image">
+		{% endif %}
+	{% endif %}
+</body>
+</html>
